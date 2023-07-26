@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Bitcoin to USD Converter</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="converter.js"></script>
+</head>
+<body>
+  <h1>Bitcoin to USD Converter</h1>
+  <p>Enter the number of Bitcoins:</p>
+  <input type="number" id="btc" min="0">
+  <button id="convert">Convert</button>
+  <p id="result"></p>
+</body>
+</html>
