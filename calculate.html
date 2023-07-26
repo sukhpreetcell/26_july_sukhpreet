@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    function calculate(num1, num2, operator) {
+      switch(operator) {
+        case '+':
+          return num1 + num2;
+        case '-':
+          return num1 - num2;
+        case '*':
+          return num1 * num2;
+        case '/':
+          if(num2 != 0) {
+            return num1 / num2;
+          } else {
+            return 'Error: Division by zero is not allowed.';
+          }
+        default:
+          return 'Error: Unknown operator.';
+      }
+    }
+  </script>
+</head>
+<body>
+    <label for="num1">Number 1:</label>
+    <input type="number" id="num1">
+  
+    <label for="num2">Number 2:</label>
+    <input type="number" id="num2">
+  
+    <label for="operator">Operator:</label>
+    <select id="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+  
+    <button id="myButton">Calculate</button>
+  
+    <script>
+      $(document).ready(function() {
+        $("#myButton").click(function() {
+          var num1 = $("#num1").val();
+          var num2 = $("#num2").val();
+          var operator = $("#operator").val();
+          var result = calculate(Number(num1), Number(num2), operator);
+          alert("Result: " + result);
+        });
+      });
+    </script>
+  </body>
